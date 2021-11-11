@@ -1,0 +1,11 @@
+{
+	"name": "ericdress",
+	"version": "1.0.0",
+	"scripts": {
+		"build": "bash ./build.sh"
+	},
+	"engines": {
+		"node": ">=14.0.0",
+		"npm": ">7.0.0"
+	}
+}
