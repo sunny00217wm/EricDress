@@ -4,7 +4,7 @@ import { ConfigTS } from 'config/config.type';
  * 機器人的設定檔
  */
 export const config: ConfigTS = {
-	token: process.env.Token, // BotFather 給你的 Token，類似「123456789:q234fipjfjaewkflASDFASjaslkdf」
+	token: process.env.TOKEN, // BotFather 給你的 Token，類似「123456789:q234fipjfjaewkflASDFASjaslkdf」
 
 	launchType: 'webhook',
 
