@@ -23,7 +23,9 @@ export const config: ConfigTS = {
 		/**
 		 * 紀錄檔檔名，如留空則只向螢幕輸出
 		 */
-		logfile: ''
+		logfile: '',
+
+		logToChannel: Number( process.env.LOGTOCHANNEL )
 	},
 
 	msgs: {
