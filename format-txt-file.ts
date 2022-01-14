@@ -11,16 +11,16 @@ program
 	.action( function ( p: string ) {
 		const fullpath: string = path.join(  __dirname, p );
 
-		fs.readFile( fullpath, function ( err: NodeJS.ErrnoException, data: Buffer ) {
+		fs.readFile( fullpath, function ( err: NodeJS.ErrnoException | null, data: Buffer ) {
 			if ( err ) {
 				console.error( err );
 				return;
 			}
-			fs.writeFile( fullpath, data.toString( 'utf-8' ).split( ',' ).map( function ( s: string ): string {
+			fs.writeFile( fullpath, [ ...data.toString( 'utf-8' ).split( ',' ).map( function ( s: string ): string {
 				return s.trim();
 			} ).filter( function ( s: string ): string {
 				return s;
-			} ).sort().join( ',\n' ) + ',\n', function ( err2: NodeJS.ErrnoException ) {
+			} ).sort() ].join( ',\n' ) + ',\n', function ( err2: NodeJS.ErrnoException | null ) {
 				if ( err2 ) {
 					console.error( err2 );
 					return;
